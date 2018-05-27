@@ -1,1 +1,7 @@
-{}
+{
+	"BCRYPT":
+	{
+		"SALT_ROUNDS": 8
+	},
+	"KEYS": ["BQEPBgQDCwAPCgoIBAQLDw", "CQ8NDQIKDQQICwsMBA0GAQ"]
+}

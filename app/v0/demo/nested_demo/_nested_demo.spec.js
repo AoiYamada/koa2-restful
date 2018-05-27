@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 const expect = chai.expect;
-const sholud = chai.should();
+const should = chai.should();
 const path = require('path');
 const CWD = process.cwd();
 const LIB = path.join(CWD, 'lib');
