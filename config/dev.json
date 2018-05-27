@@ -1,3 +1,12 @@
 {
-    "PORT": 10020
+    "PORT": 10020,
+    "DB":
+    {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "root",
+        "charset": "utf8",
+        "database": "test",
+        "timeout": 60000
+    }
 }

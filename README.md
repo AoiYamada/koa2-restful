@@ -1,5 +1,5 @@
 # koa2-restful
-A restful koa2 api stater.
+A restful koa2 api stater
 
 ## Reference
 https://www.jianshu.com/p/c37a13506753
@@ -22,6 +22,16 @@ for prod
 npm start
 ```
 
+## Mock Db
+```mysql
+CREATE TABLE `rest`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC));
+```
+
 ## To do
 1. [x] auto routing with version
 2. [x] nested routing
@@ -32,15 +42,16 @@ npm start
 7. [ ] add oauth2 with redis ttl for token/refresh token
 8. [ ] auto gen api doc with interactive test(swagger? apidoc?)
 9. [x] body parser, logger
-10. [ ] add sault and encrypt for password like sensitive information (bcrypt?)
+10. [x] add sault and encrypt for password like sensitive information (bcrypt?)
 11. [ ] limit access rate of same IP
-12. [ ] CORS
+12. [x] CORS
 13. [ ] cmd installer like yeoman
 14. [ ] all requirements of `./info.txt`
 15. [ ] Use `Accept-Language` and `Content-Language` header for deciding what language of contents get method return
 16. [ ] handle file upload
 17. [ ] setup `pm2.config.json` for pm2
 18. [ ] a stub db
+19. [x] set compression for large text contents
 ...
 
 ## Naming
