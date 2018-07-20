@@ -1,20 +1,12 @@
 // define global const/functions
 require('./lib/_global');
-
 const path = require('path');
+const constant = require('./config/constant');
+const middleWare = require('./config/middleware');
 const Koa = require('koa');
-const logger = require('koa-logger');
-// const koaBody = require('koa-body');
-const Config = require('config');
-const PORT = Config.PORT;
-const router = require(path.join(__app, 'router'));
 
 const app = new Koa();
-app
-    .use(logger())
-    // .use(koaBody())
-    .use(router.routes())
-    .use(router.allowedMethods())
-    .listen(PORT);
+middleWare(app);
+app.listen(constant.PORT);
 
-console.log(`Koa API is starting at port ${PORT}`);
+console.log(`Koa API is starting at port ${constant.PORT}`);
