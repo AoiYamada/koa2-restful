@@ -1,12 +1,8 @@
-const User = require('./user.model');
+const { User } = require('./User.model');
 
-/**
- * api
- *
- */
 async function get(ctx, next) {
     try {
-        const result = User.view();
+        const result = await User.view();
         ctx.status = 200;
         ctx.body = 'User Controller';
     } catch (err) {

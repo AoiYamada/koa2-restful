@@ -7,6 +7,7 @@ function add_routers(router, rules, name, version = 'v1'){
     for(let method in rules) {
         if(method.startsWith('GET')) {
             let path = version + method.slice(4) + name;
+            console.log(path)
             router.get(path, rules[method]);
         }else if(method.startsWith('POST')) {
             let path = version + method.slice(5) + name;
@@ -22,7 +23,7 @@ function read(router) {
     for(let i of files) {
         if(i.endsWith('controller.js')) {
             let version = i.match(/(\/v\d)(?!\w)/g)[0];
-            let n = i.split('/')[0].split(".");
+            let n = i.split('/').pop().split(".");
             const s = require(i);
             n = n.length === 3 ? n[0].toLowerCase() : '';
             add_routers(router, s, n, version);
