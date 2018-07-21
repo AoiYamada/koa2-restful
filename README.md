@@ -25,9 +25,9 @@ npm start
 ## To do
 1. [x] auto routing with version
 2. [x] nested routing
-3. [ ] sample method for all http method
+3. [ ] sql builder (knex)
 4. [ ] sample unit test of each method
-5. [ ] sample data model of mysql/mongo using ORM/ODM or further encapsulated lib
+5. [ ] validation (e.g joi)
 6. [ ] sample unit test of model
 7. [ ] add oauth2 with redis ttl for token/refresh token
 8. [ ] auto gen api doc with interactive test(swagger? apidoc?)
@@ -47,7 +47,3 @@ npm start
 1. use Snake case for folder and http method for filename.
 2. use `_${folder_name}.spec.js` for unit test
 3. `__${variable_name}` for global variable
-...
-
-## Notes
-For each method, export an array of koa middleware. If body parser is needed, append `koaBody()` before the middleware, ref: `./app/v0/demo/get.js`.
