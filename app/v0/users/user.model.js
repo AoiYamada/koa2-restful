@@ -1,7 +1,13 @@
-module.export = {
-    view: async () => {
-        return {
-            name: "test"
-        }
-    }
+class User{
+  construct() {
+
+  }  
+
+static async view(){
+
+  }
+}
+
+module.exports = {
+    User
 }

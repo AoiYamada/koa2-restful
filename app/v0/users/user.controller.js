@@ -1,7 +1,7 @@
 const User = require('./user.model');
 async function get(ctx, next) {
     try {
-        // const result = User.view();
+        const result = User.view();
         ctx.status = 200;
         ctx.body = 'User Controller';
     } catch (err) {
@@ -11,7 +11,7 @@ async function get(ctx, next) {
 
 module.exports = {
     'SIGNUP /': get,
-    'GET /user': get,
+    'GET /': get,
     'POST /': async (ctx, next) => {
 
     }
