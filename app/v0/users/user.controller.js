@@ -1,4 +1,9 @@
 const User = require('./user.model');
+
+/**
+ * api
+ *
+ */
 async function get(ctx, next) {
     try {
         const result = User.view();
