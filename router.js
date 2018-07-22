@@ -6,11 +6,13 @@ const router = new Router();
 function add_routers(router, rules, name, version = 'v1'){
     for(let method in rules) {
         if(method.startsWith('GET')) {
-            let path = version + method.slice(4) + name;
-            console.log(path)
+            if(name == '') var path = version;
+            else path = version + name + method.slice(4);
             router.get(path, rules[method]);
+            console.log(path)
         }else if(method.startsWith('POST')) {
-            let path = version + method.slice(5) + name;
+            if(name == '') var path = version;
+            else path = version + name + method.slice(5);
             router.post(path, rules[method]);
         }else {
             console.log('Invalid method');
@@ -22,10 +24,11 @@ function read(router) {
     let files = __walk(__app);
     for(let i of files) {
         if(i.endsWith('controller.js')) {
-            let version = i.match(/(\/v\d)(?!\w)/g)[0];
+            let version = i.match(/(\/v\d)\//g)[0];
             let n = i.split('/').pop().split(".");
             const s = require(i);
             n = n.length === 3 ? n[0].toLowerCase() : '';
+            console.log(n)
             add_routers(router, s, n, version);
         }
     }

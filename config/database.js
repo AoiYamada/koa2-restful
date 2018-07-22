@@ -3,8 +3,9 @@ exports.knex =  require('knex')({
     connection: {
       host : '127.0.0.1',
       user : 'root',
-      password : 'qwerasdfzxcv',
-      database : 'test'
+      password : 'root',
+      database : 'test',
+      port:8889
     },
     pool: { min: 0, max: 7 }
   });
