@@ -2,6 +2,7 @@ const { User } = require('./User.model');
 
 async function get(ctx, next) {
     try {
+        
         const result = await User.view('user', { key:ctx.params}, ctx.query);
         console.log(result)
         ctx.status = 200;

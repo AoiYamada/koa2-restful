@@ -1,5 +1,5 @@
 module.exports = {
-    constant: require('./constant'),
+    constant: require('./config'),
     database: require('./database').knex,
     middleware: require('./middleware')
 }
