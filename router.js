@@ -3,7 +3,7 @@ const path = require('path');
 const Router = require('koa-router');
 const router = new Router();
 
-function add_routers(router, rules, name, version = 'v1'){
+function add_routers(rules, name, version = 'v1'){
     for(let method in rules) {
         if(method.startsWith('GET')) {
             if(name == '') var path = version;
@@ -20,7 +20,7 @@ function add_routers(router, rules, name, version = 'v1'){
     }
 }
 
-function read(router) {
+function read() {
     let files = __walk(__app);
     for(let i of files) {
         if(i.endsWith('controller.js')) {
@@ -29,12 +29,12 @@ function read(router) {
             const s = require(i);
             n = n.length === 3 ? n[0].toLowerCase() : '';
             console.log(n)
-            add_routers(router, s, n, version);
+            add_routers(s, n, version);
         }
     }
 }
 
 module.exports = () => {
-    read(router);
+    read();
     return router;
 }
