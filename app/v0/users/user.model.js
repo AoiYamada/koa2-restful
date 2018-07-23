@@ -6,7 +6,7 @@ class User {
   construct() {}
 
   static async view(table, { key }, {order_by, sort_by, limit=50, offset=0, ...attach} = {}) {
-console.log(attach)
+    console.log(attach)
     let query = db(table);
     if(order_by && sort_by) {
       query.orderBy(order_by, sort_by);

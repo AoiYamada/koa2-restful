@@ -1,8 +1,7 @@
 // define global const/functions
 require('./lib/_global');
 const path = require('path');
-const constant = require('./config/constant');
-const middleWare = require('./config/middleware');
+const { middleWare, constant } = require('./config/config');
 const Koa = require('koa');
 
 const app = new Koa();

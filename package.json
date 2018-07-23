@@ -6,20 +6,19 @@
   "scripts": {
     "test": "mocha --recursive \"./{,!(node_modules)/**/}*spec.js\"",
     "start": "cross-env NODE_ENV=dev nodemon server.js",
-    "start:dev": "cross-env NODE_ENV=dev nodemon server.js"
+    "start:dev": "cross-env NODE_ENV=dev nodemon server.js",
+    "apidoc": "apidoc -i app -o doc"
   },
   "author": "AoiYamada",
   "license": "ISC",
   "devDependencies": {
+    "apidoc": "^0.17.6",
     "chai": "^4.1.2",
-    "gulp-apidoc": "^0.2.8",
     "mocha": "^5.1.1",
     "nodemon": "^1.17.3"
   },
   "dependencies": {
-    "config": "^1.30.0",
     "cross-env": "^5.1.4",
-    "gulp": "^3.9.1",
     "knex": "^0.15.2",
     "koa": "^2.5.1",
     "koa-body": "^2.5.0",
