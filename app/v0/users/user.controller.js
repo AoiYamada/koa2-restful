@@ -2,9 +2,20 @@ const { User } = require('./User.model');
 
 async function get(ctx, next) {
     try {
-        const result = await User.view('user', { key:ctx.params}, ctx.query);
-        console.log(result)
+        console.log(1)
         ctx.status = 200;
+        const result = await User.view('user', { key:ctx.params}, ctx.query);
+        if(result.length == 0) ctx.status = 204;
+        ctx.body = result;
+    } catch (err) {
+        ctx.throw(500, err);
+    }
+}
+
+async function post(ctx, next) {
+    try{
+        ctx.status = 200;
+        const result = await User.insert('user', ctx.query);
         ctx.body = result;
     } catch (err) {
         ctx.throw(500, err);

@@ -14,11 +14,13 @@
   "devDependencies": {
     "apidoc": "^0.17.6",
     "chai": "^4.1.2",
+    "eslint-config-google": "^0.9.1",
     "mocha": "^5.1.1",
     "nodemon": "^1.17.3"
   },
   "dependencies": {
     "cross-env": "^5.1.4",
+    "joi": "^13.4.0",
     "knex": "^0.15.2",
     "koa": "^2.5.1",
     "koa-body": "^2.5.0",
